@@ -200,3 +200,7 @@ for_window [class="Slack"] move to workspace $ws3
 exec "setxkbmap -layout es,es"
 bindsym $mod+F1 exec "setxkbmap -layout es,es"
 bindsym $mod+F2 exec "setxkbmap -layout us,us"
+
+# move focused workspace between monitors
+bindsym $mod+Ctrl+l move workspace to output right
+bindsym $mod+Ctrl+h move workspace to output left
