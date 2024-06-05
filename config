@@ -45,6 +45,12 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+# Remember to install playerctl `sudo apt-get install playerctl`
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+
+#  If this is not working, just run `sudo usermod -aG video ${USER}` for your user, source: https://github.com/Hummer12007/brightnessctl/issues/63
+bindsym XF86MonBrightnessDown exec brightnessctl set 10-
+bindsym XF86MonBrightnessUp exec brightnessctl set +10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
