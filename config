@@ -198,7 +198,8 @@ bar {
         status_command i3status -c ~/.config/i3/i3status.conf
 }
 
-for_window [class="firefox"] move to workspace $ws2
+# Use `xprop | grep CLASS` to know the class name of a program
+for_window [class="Google-chrome"] move to workspace $ws2
 for_window [class="Slack"] move to workspace $ws3
 
 exec "setxkbmap -layout es,es"
