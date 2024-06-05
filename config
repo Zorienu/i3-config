@@ -39,11 +39,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# exec "xrandr | grep 'HDMI-1 connected' && xrandr --output HDMI-1 --mode 1920x1080 --right-of eDP-1"
-# exec "xrandr --output HDMI-1 --mode 1920x1080 --right-of eDP-1"
-# exec "xrandr | grep 'HDMI-1 disconnected' && xrandr --output HDMI-1 --off"
-exec ./setupMonitors.sh
-
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -160,7 +155,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r exec /home/jasyd/.config/i3/setupI3.sh
+bindsym $mod+Shift+r exec $HOME/.config/i3/setupI3.sh
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
